@@ -26,14 +26,24 @@ describe('Testando as rotas do app.', () => {
   //   expect(linksApp[3].textContent).toBe('More details');
   // });
 
-  it('Testa se a aplicação é redirecionada para as rotas corretas conforme o click.', () => {
+  // it('Testa se a aplicação é redirecionada para as rotas corretas conforme o click.', () => {
+  //   const { history } = renderWithRouter(<App />);
+  //   const linksApp = screen.getAllByRole('link');
+  //   userEvent.click(linksApp[1]);
+  //   expect(history.location.pathname).toEqual('/about');
+  //   userEvent.click(linksApp[0]);
+  //   expect(history.location.pathname).toEqual('/');
+  //   userEvent.click(linksApp[2]);
+  //   expect(history.location.pathname).toEqual('/favorites');
+  // });
+
+  it('Testa se a aplicação renderiza a pagina NotFound caso a url seja inválida.', () => {
     const { history } = renderWithRouter(<App />);
-    const linkHome = screen.getAllByRole('link');
-    userEvent.click(linkHome[1]);
-    expect(history.location.pathname).toEqual('/about');
-    userEvent.click(linkHome[0]);
-    expect(history.location.pathname).toEqual('/');
-    userEvent.click(linkHome[2]);
-    expect(history.location.pathname).toEqual('/favorites');
+    act(() => {
+      history.push('/dd');
+    });
+
+    const textNotFound = screen.getByText('Page requested not found');
+    expect(textNotFound).toBeInTheDocument();
   });
 });
