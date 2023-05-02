@@ -46,9 +46,9 @@ class App extends Component {
           <Link className="link" to="/favorites">{`Favorite Pokémon`}</Link>
         </nav>
         <Routes
-          favoritePokemon={ favoritePokemon }
-          pokemonList={ pokemonList }
-          isPokemonFavoriteById={ isPokemonFavoriteById }
+          favoritePokemon={favoritePokemon}
+          pokemonList={pokemonList}
+          isPokemonFavoriteById={isPokemonFavoriteById}
           onUpdateFavoritePokemon={
             (pokemonId, checked) => this.onUpdateFavoritePokemon(pokemonId, checked)
           }

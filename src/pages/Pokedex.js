@@ -53,18 +53,18 @@ class Pokedex extends React.Component {
       <div className="pokedex">
         <h2>{`Encountered Pokémon`}</h2>
         <Pokemon
-          pokemon={ pokemon }
-          isFavorite={ isPokemonFavoriteById[pokemon.id] }
+          pokemon={pokemon}
+          isFavorite={isPokemonFavoriteById[pokemon.id]}
         />
         <PokemonButtonsPanel
-          pokemonTypes={ pokemonTypes }
-          filterPokemon={ (type) => this.filterPokemon(type) }
+          pokemonTypes={pokemonTypes}
+          filterPokemon={(type) => this.filterPokemon(type)}
         />
         <Button
           dataTestId="next-pokemon"
           className="pokedex-button"
-          onClick={ () => this.nextPokemon(filteredPokemon.length) }
-          disabled={ filteredPokemon.length <= 1 }
+          onClick={() => this.nextPokemon(filteredPokemon.length)}
+          disabled={filteredPokemon.length <= 1}
         >
           {`Próximo Pokémon`}
         </Button>

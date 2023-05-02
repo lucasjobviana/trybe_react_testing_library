@@ -27,15 +27,15 @@ class PokemonDetails extends React.Component {
 
     return (
       <section className="pokemon-details">
-        <h2>{ `${pokemon.name} Details` }</h2>
+        <h2>{`${pokemon.name} Details`}</h2>
         <Pokemon
-          pokemon={ pokemon }
-          showDetailsLink={ false }
-          isFavorite={ isFavorite }
+          pokemon={pokemon}
+          showDetailsLink={false}
+          isFavorite={isFavorite}
         />
-        <PokemonData pokemon={ pokemon } />
+        <PokemonData pokemon={pokemon} />
         <FavoriteInput
-          isFavorite={ isFavorite }
+          isFavorite={isFavorite}
           onUpdateFavoritePokemon={
             (checked) => onUpdateFavoritePokemon(pokemon.id, checked)
           }

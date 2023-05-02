@@ -9,7 +9,7 @@ class PokemonButtonsPanel extends Component {
     return (
       <div className="pokedex-buttons-panel">
         <Button
-          onClick={ () => filterPokemon('all') }
+          onClick={() => filterPokemon('all')}
           className="filter-button"
         >
           All
@@ -17,8 +17,8 @@ class PokemonButtonsPanel extends Component {
         {pokemonTypes.map((type) => (
           <Button
             dataTestId={`pokemon-type-button`}
-            key={ type }
-            onClick={ () => filterPokemon(type) }
+            key={type}
+            onClick={() => filterPokemon(type)}
             className="filter-button"
           >
             {`${type}`}
