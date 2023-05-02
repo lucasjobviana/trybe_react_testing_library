@@ -17,12 +17,23 @@ describe('Testando as rotas do app.', () => {
   //   expect(linksApp.length).toBe(4);
   // });
 
-  it('Testa se os links para a rotas comtém os textos corretos.', () => {
-    renderWithRouter(<App />);
+  // it('Testa se os links para a rotas comtém os textos corretos.', () => {
+  //   renderWithRouter(<App />);
+  //   const linksApp = screen.getAllByRole('link');
+  //   expect(linksApp[0].textContent).toBe('Home');
+  //   expect(linksApp[1].textContent).toBe('About');
+  //   expect(linksApp[2].textContent).toBe('Favorite Pokémon');
+  //   expect(linksApp[3].textContent).toBe('More details');
+  // });
+
+  it('Testa se a aplicação é redirecionada para as rotas corretas conforme o click.', () => {
+    const { history } = renderWithRouter(<App />);
     const linkHome = screen.getAllByRole('link');
-    expect(linkHome[0].textContent).toBe('Home');
-    expect(linkHome[1].textContent).toBe('About');
-    expect(linkHome[2].textContent).toBe('Favorite Pokémon');
-    expect(linkHome[3].textContent).toBe('More details');
+    userEvent.click(linkHome[1]);
+    expect(history.location.pathname).toEqual('/about');
+    userEvent.click(linkHome[0]);
+    expect(history.location.pathname).toEqual('/');
+    userEvent.click(linkHome[2]);
+    expect(history.location.pathname).toEqual('/favorites');
   });
 });
