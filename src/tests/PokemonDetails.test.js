@@ -1,6 +1,6 @@
 import React from 'react';
 import { screen, act } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+
 import renderWithRouter from './helpers/renderWithRouter';
 import App from '../App';
 import pokemonList from '../data';
@@ -11,7 +11,7 @@ describe('Testando os elementos da página "PokemonDetails.js', () => {
     const { history } = renderWithRouter(<App />);
     // console.log(pokemonList[0]);
     console.log(pokemonList[0]);
-    const { name, type, averageWeight, image, id, summary, foundAt } = pokemonList[0];
+    const { name, id, summary, foundAt } = pokemonList[0];
     act(() => { history.push(`/pokemon/${id}`); });
     screen.getByText(`${name} Details`);
     expect(screen.queryByText('More details')).toBeNull();
