@@ -29,6 +29,8 @@ describe('Testando as rotas do app.', () => {
   it('Testa se a aplicação é redirecionada para as rotas corretas conforme o click nos links de navegação.', () => {
     const { history } = renderWithRouter(<App />);
     const linksApp = screen.getAllByRole('link');
+    userEvent.click(linksApp[3]);
+    expect(history.location.pathname).toEqual('/pokemon/25');
     userEvent.click(linksApp[1]);
     expect(history.location.pathname).toEqual('/about');
     userEvent.click(linksApp[0]);

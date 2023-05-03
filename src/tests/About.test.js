@@ -3,7 +3,7 @@ import { screen } from '@testing-library/react';
 import renderWithRouter from './helpers/renderWithRouter';
 import { About } from '../pages';
 
-describe('asd', () => {
+describe('About.js testing.', () => {
   it('Testando os elementos da página "About.js"', () => {
     renderWithRouter(<About />);
 
