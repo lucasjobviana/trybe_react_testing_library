@@ -15,7 +15,9 @@ describe('Testando a rota /favorites', () => {
   });
   it('Testa se a página exibe a lista de pokemons favoritos quando algum pokemon é adicionado à lista.', () => {
     const { history } = renderWithRouter(<App />);
-    const { id: firstPokemonId, name: firstPokemonName } = pokemonList[0];
+    const { id: firstPokemonId, name: firstPokemonName } = pokemonList[
+      0
+    ];
     const linkToDetails = screen.getByText('More details');
     userEvent.click(linkToDetails);
     expect(history.location.pathname).toEqual(`/pokemon/${firstPokemonId}`);
