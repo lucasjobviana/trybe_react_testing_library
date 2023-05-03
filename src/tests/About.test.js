@@ -1,12 +1,11 @@
 import React from 'react';
-import { screen, act } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { screen } from '@testing-library/react';
 import renderWithRouter from './helpers/renderWithRouter';
 import { About } from '../pages';
 
 describe('asd', () => {
   it('Testando os elementos da página "About.js"', () => {
-    const { history } = renderWithRouter(<About />);
+    renderWithRouter(<About />);
 
     const firstP = screen.getByText('This application simulates a Pokédex, a digital encyclopedia containing all Pokémon');
     const secondP = screen.getByText('One can filter Pokémon by type, and see more details for each one of them');
