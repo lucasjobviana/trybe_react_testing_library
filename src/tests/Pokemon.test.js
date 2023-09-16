@@ -7,10 +7,8 @@ import pokemonList from '../data';
 
 describe('Testando os elementos da página "Pokedex.js', () => {
   it('d', () => {
-    // console.log(pokemonList[0]);
     const { history } = renderWithRouter(<App />);
     const { name, type, averageWeight, image, id } = pokemonList[0];
-    //    console.log(pokemonList[0]);
     screen.getByText(name);
     expect(screen.getByTestId('pokemon-type').textContent).toEqual(type);
     screen.getByText(

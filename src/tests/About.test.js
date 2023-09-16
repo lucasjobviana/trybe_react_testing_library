@@ -16,7 +16,6 @@ describe('About.js testing.', () => {
     expect(firstP.tagName).toEqual('P');
     expect(secondP.tagName).toEqual('P');
     expect(textTitle.tagName).toEqual('H2');
-    console.log(img.src);
     expect(img.src).toBe('https://cdn2.bulbagarden.net/upload/thumb/8/86/Gen_I_Pok%C3%A9dex.png/800px-Gen_I_Pok%C3%A9dex.png');
 
     expect(secondP).toBeInTheDocument();

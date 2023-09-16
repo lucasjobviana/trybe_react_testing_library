@@ -7,9 +7,9 @@ import pokemonList from '../data';
 
 const filterNames = [...new Set(
   pokemonList.reduce((types, { type }) => [...types, type], []),
-)];// funcção reutilizado do próprio projeto: pokedex.js.
+)];
 
-const clickNextAndCompare = (list) => { // type
+const clickNextAndCompare = (list) => {
   list.forEach((pokemon) => {
     expect(screen.getByTestId('pokemon-name').textContent).toEqual(pokemon.name);
     userEvent.click(screen.getByText('Próximo Pokémon'));
@@ -66,11 +66,3 @@ describe('Testando os elementos da página "Pokedex.js', () => {
     screen.getByText('Pikachu');
   });
 });
-
-//   pokemonList.filter((pokemon) => pokemon.type === type.textContent).forEach((p) => {
-//     expect(screen.getByTestId('pokemon-name').textContent).toEqual(p.name);
-//     act(() => {
-//       userEvent.click(screen.getByTestId('next-pokemon'));
-//     });
-//   });
-//   userEvent.click(screen.getByTestId('next-pokemon'));
